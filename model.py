@@ -10,7 +10,7 @@ class ImageClassifier(nn.Module):
         self.input_size = input_size
         self.output_size = output_size
 
-        super().__init__()
+        super().__init__() 
 
         self.layers = nn.Sequential(
             nn.Linear(input_size, 500),

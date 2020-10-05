@@ -10,7 +10,7 @@ import torch.optim as optim
 class Trainer():
 
     def __init__(self, model, optimizer, crit):
-        self.model = model
+        self.model = modelcp
         self.optimizer = optimizer
         self.crit = crit
 
@@ -27,9 +27,9 @@ class Trainer():
             config.batch_size, dim=0)
 
         total_loss = 0
-
+ 
         for i, (x_i, y_i) in enumerate(zip(x, y)):
-            y_hat_i = self.model(x_i)
+            y_hat_i = self.model(x_i)  
             loss_i = self.crit(y_hat_i, y_i.squeeze())
 
             # Initialize the gradients of the model.
